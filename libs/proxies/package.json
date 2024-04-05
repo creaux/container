@@ -1,0 +1,22 @@
+{
+  "name": "@creaux/container-proxies",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "preview": "vite preview",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@creaux/container-proxies-creators": "0.0.1",
+    "@creaux/container-store": "0.0.1",
+    "vite": "^5.2.7",
+    "vite-plugin-dts": "~3.8.1"
+  },
+  "main": "../../dist/libs/proxies/index.js",
+  "module": "../../dist/libs/proxies/index.js",
+  "types": "../../dist/libs/proxies/index.d.ts",
+  "private": true
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@creaux/container-worker",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "preview": "vite preview",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "happy-dom-without-node": "^13.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@creaux/container-store": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24"
+  },
+  "main": "../../dist/libs/worker/index.js",
+  "module": "../../dist/libs/worker/index.js",
+  "types": "../../dist/libs/worker/index.d.ts"
+}

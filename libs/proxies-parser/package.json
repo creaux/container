@@ -1,0 +1,23 @@
+{
+  "name": "@creaux/container-proxies-parser",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "preview": "vite preview",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@babel/generator": "7.24.1",
+    "@babel/types": "^7.14.5",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "~3.8.1",
+    "@babel/parser": "^7.24.4",
+    "@babel/traverse": "^7.24.1"
+  },
+  "main": "../../dist/libs/proxies-parser/index.js",
+  "module": "../../dist/libs/proxies-parser/index.js",
+  "types": "../../dist/libs/proxies-parser/index.d.ts"
+}

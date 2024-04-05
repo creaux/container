@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowJs": false,
+    "esModuleInterop": true,
+    "strict": true,
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@creaux/container-proxies": ["libs/proxies/src/index.ts"],
+      "@creaux/container-proxies-creators": [
+        "libs/proxies-creators/src/index.ts"
+      ],
+      "@creaux/container-proxies-parser": ["libs/proxies-parser/src/index.ts"],
+      "@creaux/container-store": ["libs/store/src/index.ts"],
+      "@creaux/container-worker": ["libs/worker/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

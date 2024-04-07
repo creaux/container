@@ -8,7 +8,7 @@
     "rim": "find . | grep /node_modules$ | grep -v /node_modules/ | xargs rm -fR",
     "postinstall": "npm run build --workspace @creaux/container-proxies-parser"
   },
-  "author": "",
+  "author": "Petr Juna <petr@juna.consulting>",
   "license": "ISC",
   "workspaces": [
     "libs/*",

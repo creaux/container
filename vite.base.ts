@@ -4,8 +4,6 @@ import { join, resolve, relative } from "path";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-console.log(process.cwd(), __dirname);
-
 export default defineConfig({
   root: process.cwd(),
   cacheDir: join(

@@ -10,8 +10,13 @@ const root = ReactDOM.createRoot(
 
 root.render(createElement(App));
 
-// Communicates with enclosing parent window
+const channel = new MessageChannel();
+
+// Communicates with enclosing parent
 store.subscribe(() => {
+  channel.port1.postMessage(store.getState());
   // FIXME: targetOrigin has to be adjusted for production
-  parent.postMessage(store.getState(), "http://localhost:3000");
+  parent.postMessage({ id: "container-channel" }, "http://localhost:3000", [
+    channel.port2,
+  ]);
 });

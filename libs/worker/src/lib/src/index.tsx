@@ -1,6 +1,5 @@
 import App from './App';
 import { createRoot } from 'react-dom/client';
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import { store, ready, markup } from '@creaux/container-store';
 
 new window.MutationObserver((mutations) => {

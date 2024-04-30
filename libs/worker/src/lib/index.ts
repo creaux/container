@@ -1,7 +1,9 @@
 import './dom';
 import './src';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { store } from '@creaux/container-store';
+import { store, code } from '@creaux/container-store';
+
+// Dispatch code into the store
+store.dispatch(code((await import('./src/component.assess.tsx?raw')).default));
 
 onmessage = (message: MessageEvent) => {
   // store.dispatch(push(message.data.router.location?.pathname || '/'));

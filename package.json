@@ -11,8 +11,13 @@
   },
   "author": "Petr Juna <petr@juna.consulting>",
   "license": "ISC",
-  "workspaces": ["libs/*", "apps/*"],
+  "workspaces": [
+    "libs/*",
+    "apps/*"
+  ],
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/node": "^20.12.4",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",

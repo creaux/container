@@ -6,14 +6,12 @@
   "type": "module",
   "scripts": {
     "rim": "find . | grep /node_modules$ | grep -v /node_modules/ | xargs rm -fR",
-    "postinstall": "npm run build --workspace @creaux/container-proxies-parser"
+    "postinstall": "npm run build --workspace @creaux/container-proxies-parser",
+    "prepare": "husky"
   },
   "author": "Petr Juna <petr@juna.consulting>",
   "license": "ISC",
-  "workspaces": [
-    "libs/*",
-    "apps/*"
-  ],
+  "workspaces": ["libs/*", "apps/*"],
   "devDependencies": {
     "@types/node": "^20.12.4",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
@@ -21,6 +19,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "deepmerge": "^4.3.1",
     "eslint": "^8.57.0",
+    "husky": "^9.0.11",
     "prettier": "3.2.5",
     "react-redux": "^9.1.0",
     "typescript": "^5.4.4",

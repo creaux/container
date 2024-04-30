@@ -67,6 +67,7 @@ export default defineConfig({
     cache: {
       dir: "./node_modules/.vitest",
     },
+    watch: false,
     environment: "node",
     include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
 

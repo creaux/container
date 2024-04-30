@@ -1,4 +1,4 @@
-import { Track, Code } from '../models';
+import { Track } from '../models';
 import { ComponentSlice, componentSlice, track } from './component.slice';
 
 describe('Component Slice', () => {

@@ -17,9 +17,9 @@ export function reaxyParser(options: ReaxyParserOptions): PluginOption {
       if (!id.match(options.blob)) return null;
       const ast = parser(code);
 
-      const useEffectVisitorInstance = useEffectVisitor(options);
+      const useEffectVisitorInstance = useEffectVisitor();
       const useStateVisitorInstance = useStateVisitor();
-      const useLayoutEffectVisitorInstance = useLayoutEffectVisitor(options);
+      const useLayoutEffectVisitorInstance = useLayoutEffectVisitor();
 
       traverse(ast, {
         CallExpression(path) {

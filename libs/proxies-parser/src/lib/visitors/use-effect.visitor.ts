@@ -1,10 +1,9 @@
 import { NodePath } from '@babel/traverse';
 import * as t from '@babel/types';
-import { ReaxyParserOptions } from '../config';
 import { isIdentifier, isImportSpecifier, SourceLocation } from '@babel/types';
 import { transformReaxyMetaToProperties } from '../utils';
 
-export const useEffectVisitor = (options: ReaxyParserOptions) => ({
+export const useEffectVisitor = () => ({
   CallExpression(path: NodePath<t.CallExpression>) {
     const firstArg = path.node.arguments[0];
     const dependencies = path.node.arguments[1];

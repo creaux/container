@@ -1,16 +1,19 @@
+import { PluginOption, Plugin, TransformResult } from 'vite';
 import { reaxyParser } from './reaxy-parser';
 import { GeneratorResult } from '@babel/generator';
 
 describe('reaxyParser', () => {
-  let reaxy: any;
-  let transform: (code: string, id: string) => GeneratorResult;
+  let reaxy: PluginOption;
+  let transform: (code: string, id: string) => TransformResult;
   beforeAll(() => {
     reaxy = reaxyParser({
       blob: /file.tsx$/,
       idRegExp: /\s*\[!id\s+(.*?)]\s*/,
       fromImport: './use-effect.creator',
     });
-    transform = reaxy.transform;
+    if (reaxy) {
+      transform = (reaxy as Plugin).transform as never;
+    }
   });
 
   it('should replace useEffect for useEffectCreator call expression', () => {

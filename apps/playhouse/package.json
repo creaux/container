@@ -8,14 +8,12 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
     "rim": "find . | grep /node_modules$ | grep -v /node_modules/ | xargs rm -fR"
   },
   "author": "",
   "license": "ISC",
-  "workspaces": [
-    "libs/*",
-    "app"
-  ],
+  "workspaces": ["libs/*", "app"],
   "devDependencies": {
     "@reduxjs/toolkit": "^2.2.3",
     "@typescript-eslint/eslint-plugin": "^7.5.0",

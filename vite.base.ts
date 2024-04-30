@@ -48,14 +48,6 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     sourcemap: 'inline',
-    lib: {
-      // Could also be a dictionary or array of multiple entry points.
-      entry: 'src/index.ts',
-      fileName: 'index',
-      // Change this to the formats you want to support.
-      // Don't forget to update your package.json as well.
-      formats: ['es'],
-    },
     rollupOptions: {
       // External packages that should not be bundled into your library.
       external: [],

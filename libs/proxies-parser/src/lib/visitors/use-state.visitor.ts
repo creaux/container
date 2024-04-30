@@ -1,6 +1,5 @@
 import { NodePath } from '@babel/traverse';
 import * as t from '@babel/types';
-import { ReaxyParserOptions } from '../config';
 import {
   CallExpression,
   Identifier,

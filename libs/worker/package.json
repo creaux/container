@@ -7,7 +7,7 @@
     "build": "vite build",
     "test": "vitest",
     "preview": "vite preview",
-    "lint": "eslint"
+    "lint": "eslint 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "happy-dom-without-node": "^13.4.1",

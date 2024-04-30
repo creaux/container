@@ -7,7 +7,7 @@
     "build": "vite build",
     "test": "vitest",
     "preview": "vite preview",
-    "lint": "eslint"
+    "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
     "react": "18.2.0",

@@ -7,7 +7,8 @@
       "vitest/importMeta",
       "vite/client",
       "node",
-      "vitest"
+      "vitest",
+      "./src/track.d.ts"
     ]
   },
   "include": [

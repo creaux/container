@@ -7,7 +7,7 @@
     "build": "vite build",
     "test": "vitest",
     "preview": "vite preview",
-    "lint": "eslint"
+    "lint": "eslint 'src/**/*.ts'"
   },
   "dependencies": {
     "@creaux/container-proxies-creators": "0.0.1",

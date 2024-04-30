@@ -1,6 +1,6 @@
-# reaxy-parser
+# Proxies Parser
 
-This library was generated with [Nx](https://nx.dev).
+Transpile react complient code to proxified version which makes possible tracking of the code execution.
 
 ## Building
 

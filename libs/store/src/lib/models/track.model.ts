@@ -1,30 +1,42 @@
-import { instanceToPlain } from 'class-transformer';
+import { instanceToPlain } from "class-transformer";
 
+/**
+ * Information about line code execution
+ *
+ * @param {string} id Unique id of meta information
+ * @param {number} line Line number on which code is executed
+ */
 export interface Meta {
   id?: string;
   line: number;
 }
 
-export type Steps =
-  | 'INIT'
-  | 'REGISTER'
-  | 'RETURN'
-  | 'MOUNT'
-  | 'UNMOUNT'
-  | 'REGISTER_USE_STATE'
-  | 'SET_STATE'
-  | 'GET_STATE';
+/**
+ * Code of lifecycle execution in the program
+ */
+export type Code =
+  | "INIT"
+  | "REGISTER"
+  | "RETURN"
+  | "MOUNT"
+  | "UNMOUNT"
+  | "REGISTER_USE_STATE"
+  | "SET_STATE"
+  | "GET_STATE";
 
 export class Track {
-  static Steps: Steps;
-  id: string = Math.random().toString(36).substring(2, 9);
-  step: string;
-  timestamp: number = Date.now();
-  datetime: string;
-  cast = 0;
+  public id: string = Math.random().toString(36).substring(2, 9);
+  public timestamp: number = Date.now();
+  public step: string;
+  public datetime: string;
+  public cast = 0;
 
+  /**
+   * @param  {Code} code Represent available step tracked from the code run
+   * @param  {Meta} meta meta information about code which is tracked
+   */
   constructor(
-    public code: Steps,
+    public code: Code,
     public meta: Meta,
   ) {
     this.step = this.code;
@@ -39,7 +51,7 @@ export class Track {
     }
   }
 
-  static create(code: Steps, meta: Meta) {
+  static create(code: Code, meta: Meta) {
     return instanceToPlain(new Track(code, meta));
   }
 
@@ -49,9 +61,9 @@ export class Track {
     const month = date.getMonth() + 1;
     const day = date.getDate();
     const hours = date.getHours();
-    const minutes = '0' + date.getMinutes();
-    const seconds = '0' + date.getSeconds();
-    const miliseconds = '00' + date.getMilliseconds();
+    const minutes = "0" + date.getMinutes();
+    const seconds = "0" + date.getSeconds();
+    const miliseconds = "00" + date.getMilliseconds();
 
     return `${year}-${month}-${day} ${hours}:${minutes.substr(-2)}:${seconds.substr(-2)}:${miliseconds}`;
   }

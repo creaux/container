@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface RenderState {
   ready: boolean;
@@ -7,11 +7,11 @@ export interface RenderState {
 
 const initialState: RenderState = {
   ready: false,
-  value: '',
+  value: "",
 };
 
 export const renderSlice = createSlice({
-  name: 'render',
+  name: "render",
   initialState,
   reducers: {
     ready: (state) => {

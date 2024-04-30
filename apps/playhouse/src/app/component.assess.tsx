@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useLayoutEffect } from "react";
+import logo from './logo.svg';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useLayoutEffect } from 'react';
 
 export function Component() {
   const [test, setTest] = useState(0);

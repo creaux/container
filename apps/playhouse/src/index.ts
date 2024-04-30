@@ -1,17 +1,17 @@
-import * as ReactDOM from "react-dom/client";
-import { createElement } from "react";
-import { store } from "@creaux/container-store";
+import * as ReactDOM from 'react-dom/client';
+import { createElement } from 'react';
+import { store } from '@creaux/container-store';
 
-import App from "./app/app";
+import App from './app/app';
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement,
+  document.getElementById('root') as HTMLElement,
 );
 
 root.render(createElement(App));
 
 const channel = new MessageChannel();
-parent.postMessage({ id: "@channel/container" }, "*", [channel.port2]);
+parent.postMessage({ id: '@channel/container' }, '*', [channel.port2]);
 
 // Communicates with enclosing parent .po
 store.subscribe(() => {

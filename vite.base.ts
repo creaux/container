@@ -1,27 +1,27 @@
 /// <reference types='vitest' />
-import { defineConfig } from "vite";
-import { join, resolve, relative } from "path";
-import { viteStaticCopy } from "vite-plugin-static-copy";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from 'vite';
+import { join, resolve, relative } from 'path';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   root: process.cwd(),
   cacheDir: join(
-    relative(process.cwd(), resolve(__dirname, "node_modules")),
-    ".vite",
+    relative(process.cwd(), resolve(__dirname, 'node_modules')),
+    '.vite',
     relative(__dirname, process.cwd()),
   ),
 
   plugins: [
     tsconfigPaths({
       root: __dirname,
-      configNames: ["tsconfig.base.json"],
+      configNames: ['tsconfig.base.json'],
     }),
     viteStaticCopy({
       targets: [
         {
-          src: "./package.json",
-          dest: "./",
+          src: './package.json',
+          dest: './',
         },
       ],
     }),
@@ -40,21 +40,21 @@ export default defineConfig({
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     outDir: join(
-      relative(process.cwd(), resolve(__dirname, "dist")),
+      relative(process.cwd(), resolve(__dirname, 'dist')),
       relative(__dirname, process.cwd()),
     ),
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
-    sourcemap: "inline",
+    sourcemap: 'inline',
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: "src/index.ts",
-      fileName: "index",
+      entry: 'src/index.ts',
+      fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
-      formats: ["es"],
+      formats: ['es'],
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
@@ -65,17 +65,17 @@ export default defineConfig({
   test: {
     globals: true,
     cache: {
-      dir: "./node_modules/.vitest",
+      dir: './node_modules/.vitest',
     },
     watch: false,
-    environment: "node",
-    include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    environment: 'node',
+    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
 
-    reporters: ["default"],
+    reporters: ['default'],
     coverage: {
-      provider: "v8",
+      provider: 'v8',
       reportsDirectory: join(
-        relative(process.cwd(), resolve(__dirname, "coverage")),
+        relative(process.cwd(), resolve(__dirname, 'coverage')),
         relative(__dirname, process.cwd()),
       ),
     },

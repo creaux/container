@@ -1,4 +1,4 @@
-import { instanceToPlain } from "class-transformer";
+import { instanceToPlain } from 'class-transformer';
 
 /**
  * Information about line code execution
@@ -15,14 +15,14 @@ export interface Meta {
  * Code of lifecycle execution in the program
  */
 export type Code =
-  | "INIT"
-  | "REGISTER"
-  | "RETURN"
-  | "MOUNT"
-  | "UNMOUNT"
-  | "REGISTER_USE_STATE"
-  | "SET_STATE"
-  | "GET_STATE";
+  | 'INIT'
+  | 'REGISTER'
+  | 'RETURN'
+  | 'MOUNT'
+  | 'UNMOUNT'
+  | 'REGISTER_USE_STATE'
+  | 'SET_STATE'
+  | 'GET_STATE';
 
 export class Track {
   public id: string = Math.random().toString(36).substring(2, 9);
@@ -61,9 +61,9 @@ export class Track {
     const month = date.getMonth() + 1;
     const day = date.getDate();
     const hours = date.getHours();
-    const minutes = "0" + date.getMinutes();
-    const seconds = "0" + date.getSeconds();
-    const miliseconds = "00" + date.getMilliseconds();
+    const minutes = '0' + date.getMinutes();
+    const seconds = '0' + date.getSeconds();
+    const miliseconds = '00' + date.getMilliseconds();
 
     return `${year}-${month}-${day} ${hours}:${minutes.substr(-2)}:${seconds.substr(-2)}:${miliseconds}`;
   }

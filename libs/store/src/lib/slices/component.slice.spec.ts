@@ -1,4 +1,4 @@
-import { Track } from '../models';
+import { Track } from '@creaux/playhouse-track';
 import { ComponentSlice, componentSlice, track } from './component.slice';
 
 describe('Component Slice', () => {

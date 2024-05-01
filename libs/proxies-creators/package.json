@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "18.2.0",
     "vite": "^5.0.0",
-    "vite-plugin-dts": "~3.8.1"
+    "vite-plugin-dts": "~3.8.1",
+    "@creaux/playhouse-track": "^0.0.2-10"
   },
   "main": "../../dist/libs/proxies-creators/index.js",
   "module": "../../dist/libs/proxies-creators/index.js",

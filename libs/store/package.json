@@ -13,7 +13,8 @@
     "class-transformer": "^0.5.1",
     "@reduxjs/toolkit": "^2.2.2",
     "vite": "^5.2.7",
-    "vite-plugin-dts": "~3.8.1"
+    "vite-plugin-dts": "~3.8.1",
+    "@creaux/playhouse-track": "^0.0.2-10"
   },
   "main": "../../dist/libs/store/index.js",
   "module": "../../dist/libs/store/index.js",

@@ -13,7 +13,7 @@
     "happy-dom-without-node": "^13.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@creaux/container-store": "0.0.1"
+    "@creaux/playhouse-track": "^0.0.2-10"
   },
   "devDependencies": {
     "@types/react": "^18.2.74",

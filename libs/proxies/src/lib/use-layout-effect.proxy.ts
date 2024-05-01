@@ -1,17 +1,15 @@
-import {
-  createUseLayoutEffect,
-  ReaxyMeta,
-} from '@creaux/container-proxies-creators';
-import { store, track, Track } from '@creaux/container-store';
+import { createUseLayoutEffect } from '@creaux/container-proxies-creators';
+import { store, track } from '@creaux/container-store';
 import { wait } from './wait';
+import { Track, Meta } from '@creaux/playhouse-track';
 
-export const useLayoutEffectProxy = (meta: ReaxyMeta) =>
+export const useLayoutEffectProxy = (meta: Meta) =>
   createUseLayoutEffect(
-    (meta: ReaxyMeta) => {
+    (meta: Meta) => {
       wait(500);
       store.dispatch(track(Track.create('MOUNT', meta)));
     },
-    (meta: ReaxyMeta) => {
+    (meta: Meta) => {
       wait(500);
       store.dispatch(track(Track.create('UNMOUNT', meta)));
     },

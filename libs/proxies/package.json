@@ -13,7 +13,8 @@
     "@creaux/container-proxies-creators": "0.0.1",
     "@creaux/container-store": "0.0.1",
     "vite": "^5.2.7",
-    "vite-plugin-dts": "~3.8.1"
+    "vite-plugin-dts": "~3.8.1",
+    "@creaux/playhouse-track": "^0.0.2-10"
   },
   "main": "../../dist/libs/proxies/index.js",
   "module": "../../dist/libs/proxies/index.js",

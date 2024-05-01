@@ -1,20 +1,20 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import { ReaxyMeta } from '../reaxy-meta.interface';
+import { Meta } from '@creaux/playhouse-track';
 
 export function createUseState(
   onRegister: () => void,
-  onSetState: (meta: ReaxyMeta) => void,
-  onGetState: (meta: ReaxyMeta) => void,
+  onSetState: (meta: Meta) => void,
+  onGetState: (meta: Meta) => void,
 ) {
   return function useProxiedState<T>(
     initialState: T | (() => T),
   ): [
-    (meta: ReaxyMeta) => { value: T },
-    (meta: ReaxyMeta) => Dispatch<SetStateAction<T>>,
+    (meta: Meta) => { value: T },
+    (meta: Meta) => Dispatch<SetStateAction<T>>,
   ] {
     const [state, setState] = useState<T>(initialState);
 
-    const setStateProxy = (meta: ReaxyMeta): Dispatch<SetStateAction<T>> =>
+    const setStateProxy = (meta: Meta): Dispatch<SetStateAction<T>> =>
       new Proxy(setState, {
         apply(target, thisArg, argumentsList) {
           onSetState(meta);
@@ -22,7 +22,7 @@ export function createUseState(
         },
       });
 
-    const getStateProxy = (meta: ReaxyMeta) =>
+    const getStateProxy = (meta: Meta) =>
       new Proxy(
         { value: state },
         {

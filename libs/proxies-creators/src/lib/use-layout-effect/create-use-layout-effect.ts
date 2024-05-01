@@ -1,23 +1,23 @@
 import type { DependencyList } from 'react';
 import { useLayoutEffect as useLayoutEffectBase } from 'react';
-import { ReaxyMeta } from '../reaxy-meta.interface';
+import { Meta } from '@creaux/playhouse-track';
 
-type EffectCallback = () => void | [meta: ReaxyMeta, () => void];
+type EffectCallback = () => void | [meta: Meta, () => void];
 type UseLayoutEffectCreator = (
-  effect: [ReaxyMeta, EffectCallback],
+  effect: [Meta, EffectCallback],
   deps?: DependencyList,
 ) => void;
 
 export const createUseLayoutEffect = (
-  onMount: (meta: ReaxyMeta) => void,
-  onUnmount: (meta: ReaxyMeta) => void,
+  onMount: (meta: Meta) => void,
+  onUnmount: (meta: Meta) => void,
   onRegistered: () => void,
 ) =>
   new Proxy(useLayoutEffectBase, {
     apply: function (
       target: typeof useLayoutEffectBase,
       thisArg: string,
-      args: [[meta: ReaxyMeta, EffectCallback], DependencyList?],
+      args: [[meta: Meta, EffectCallback], DependencyList?],
     ) {
       function handleMount(): (() => void) | void {
         onMount(args[0][0]);
@@ -27,7 +27,7 @@ export const createUseLayoutEffect = (
         }
       }
 
-      function handleDestruct(meta: ReaxyMeta, destructor: () => void) {
+      function handleDestruct(meta: Meta, destructor: () => void) {
         onUnmount(meta);
         return destructor();
       }

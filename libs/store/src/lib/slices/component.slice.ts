@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Track } from '../models';
+import { Track } from '@creaux/playhouse-track';
 
 export interface ComponentSlice {
   value: Array<Track>;

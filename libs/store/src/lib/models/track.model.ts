@@ -30,7 +30,7 @@ export class Track {
   public cast = 0;
 
   /**
-   * @param  {Code} code Represent available step tracked from the code run
+   * @param  {Code} step Represent available step tracked from the code run
    * @param  {Meta} meta meta information about code which is tracked
    */
   constructor(

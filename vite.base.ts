@@ -52,6 +52,15 @@ export default defineConfig({
       // External packages that should not be bundled into your library.
       external: [],
     },
+    lib: {
+      // Could also be a dictionary or array of multiple entry points.
+      entry: join(process.cwd(), 'src/index.ts'),
+      fileName: 'index',
+      // Change this to the formats you want to support.
+      // Don't forget to update your package.json as well.
+      formats: ['es'],
+    },
+    target: 'esnext',
   },
 
   test: {

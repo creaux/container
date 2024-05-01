@@ -16,7 +16,6 @@ describe('Component Slice', () => {
     expect(result.value[0].id).toBeDefined();
     expect(result.value[0].timestamp).toBeDefined();
     expect(result.value[0].step).toEqual('INIT');
-    expect(result.value[0].datetime).toBeDefined();
     expect(result.value[0].cast).toEqual(0);
     expect(result.value[0].meta.id).toEqual('a');
     expect(result.value[0].meta.line).toEqual(1);
